@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "262256697297",
+    "firebase_url": "https://logindatabase-77638.firebaseio.com",
+    "project_id": "logindatabase-77638",
+    "storage_bucket": "logindatabase-77638.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:262256697297:android:40ae3878703af013",
+        "android_client_info": {
+          "package_name": "com.example.makina.loginapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "262256697297-0bj3srg6879mao7c99pqpon8hasslhof.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.makina.loginapp",
+            "certificate_hash": "924c691a9ff85694a09e1b959fc775162f407c4f"
+          }
+        },
+        {
+          "client_id": "262256697297-ivcj98hrpg9ind7ua22blqnub588feva.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPG4VOdaWJCLMsqC_JYM-pK3ntBFazloo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "262256697297-ivcj98hrpg9ind7ua22blqnub588feva.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
