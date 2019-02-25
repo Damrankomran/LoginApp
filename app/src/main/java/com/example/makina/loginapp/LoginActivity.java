@@ -59,29 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     public void LoginController(){
 
-        //editTextController();
-
-        userInfo();
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Please enter email", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(getApplicationContext(), "Please enter a valid email", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        //Parola girmemiş kullanıcıları uyarıyoruz
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(getApplicationContext(),"Please enter password",Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if(password.length() < 6){
-            Toast.makeText(getApplicationContext(),"Minimum lenght of password should be 6!",Toast.LENGTH_SHORT).show();
-            return;
-        }
+        editTextController();
 
         //Firebase üzerinde kullanıcı doğrulaması başlatıyoruz
         //Eğer başarılı olursa task.isSuccessful true dönecek ve EmptyActivity'e geçiş yapıcak
@@ -101,29 +79,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
     public void registerUser(){
-        //editTextController();
-
-        userInfo();
-        if (TextUtils.isEmpty(email)) {
-            Toast.makeText(getApplicationContext(), "Please enter email", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            Toast.makeText(getApplicationContext(), "Please enter a valid email", Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        //Parola girmemiş kullanıcıları uyarıyoruz
-        if(TextUtils.isEmpty(password)){
-            Toast.makeText(getApplicationContext(),"Please enter password",Toast.LENGTH_SHORT).show();
-            return;
-        }
-
-        if(password.length() < 6){
-            Toast.makeText(getApplicationContext(),"Minimum lenght of password should be 6!",Toast.LENGTH_SHORT).show();
-            return;
-        }
+        editTextController();
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -140,7 +96,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             }
                             else {
                                 // If sign in fails, display a message to the user.
-                                Toast.makeText(getApplicationContext(), "Sign in failed!!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 return;
                             }
                         }
@@ -164,6 +120,28 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     public void editTextController(){
+
+        userInfo();
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(), "Please enter email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(getApplicationContext(), "Please enter a valid email", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        //Parola girmemiş kullanıcıları uyarıyoruz
+        if(TextUtils.isEmpty(password)){
+            Toast.makeText(getApplicationContext(),"Please enter password",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if(password.length() < 6){
+            Toast.makeText(getApplicationContext(),"Minimum lenght of password should be 6!",Toast.LENGTH_SHORT).show();
+            return;
+        }
 
 
     }
